@@ -9,22 +9,24 @@
 </head>
 <body>
     <div class="game-container">
-        <h1>Minimumloonsim</h1>
-        
         <div class="stats">
-            <h2>Dozen in gepakt.: <span id="points">0</span></h2>
-            <p>Dozen per Click: <span id="pointsPerClick">1</span></p>
-            <p>Dozen per Seconde: <span id="pointsPerSecond">0</span></p>
+            <h2>Score: <span id="score">0</span></h2>
+            <p>Per Click: <span id="perClick">1</span></p>
+            <p>Auto Clicks/sec: <span id="autoClicks">0</span></p>
+            <p>Multiplier: <span id="multiplier">1</span>x</p>
         </div>
 
-        <button class="click-area" id="clickButton"></button>
+        <button class="click-button" id="mainButton">Click!</button>
 
         <div class="upgrades">
-            <button class="upgrade-btn" id="clickUpgrade">
-                Upgrade Click (Cost: <span id="clickUpgradeCost">10</span>)
+            <button class="upgrade-button" id="clickUpgrade">
+                Upgrade Click (Cost: <span id="clickCost">10</span>)
             </button>
-            <button class="upgrade-btn" id="autoClickerUpgrade">
-                Koop Auto Clicker (Cost: <span id="autoClickerCost">50</span>)
+            <button class="upgrade-button" id="autoClickUpgrade">
+                Buy Auto Clicker (Cost: <span id="autoCost">50</span>)
+            </button>
+            <button class="upgrade-button" id="multiplierUpgrade">
+                Increase Multiplier (Cost: <span id="multiplierCost">100</span>)
             </button>
         </div>
     </div>
