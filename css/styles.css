@@ -18,22 +18,56 @@ body {
     width: 100%;
 }
 
+.bouncing-text {
+    animation: bounce 1s ease-in-out infinite;
+    display: inline-block;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
 .click-button {
     width: 150px;
     height: 150px;
-  
     border: none;
-    background: #4CAF50;
     color: white;
     font-size: 24px;
     cursor: pointer;
     margin: 20px 0;
     transition: transform 0.1s;
     position: relative;
-    background-image: url(https://th.bing.com/th/id/OIP.ES5jcTM8aX7GEMRfHKbXfAHaFJ?rs=1&pid=ImgDetMain);  
+    background-image: url(../images/doos.png);  
     background-position: center;
     background-size: cover;
+    animation: shake 0.8s ease-in-out infinite;
 }
+.click-button:hover {
+    animation: none;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(-8px, 0);
+    }
+    50% {
+      transform: translate(8px, 0);
+    }
+    75% {
+      transform: translate(-8px, 0);
+    }
+    100% {
+      transform: translate(0, 0);
+    }
+  }
 
 .click-button:active {
     transform: scale(0.95);
