@@ -5,7 +5,7 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-image: url(https://cdn.discordapp.com/attachments/1237828557175132230/1329390056884015124/TOOKIE.png?ex=678a2a78&is=6788d8f8&hm=260204444e6a9336e5463f727164581f92d418a285b57c300848e771e011196e&);
 }
 
 .game-container {
@@ -21,7 +21,7 @@ body {
 .click-button {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
+  
     border: none;
     background: #4CAF50;
     color: white;
@@ -30,6 +30,9 @@ body {
     margin: 20px 0;
     transition: transform 0.1s;
     position: relative;
+    background-image: url(https://th.bing.com/th/id/OIP.ES5jcTM8aX7GEMRfHKbXfAHaFJ?rs=1&pid=ImgDetMain);  
+    background-position: center;
+    background-size: cover;
 }
 
 .click-button:active {
@@ -75,7 +78,7 @@ body {
     animation: floatUp 1s ease-out forwards;
     pointer-events: none;
     font-weight: bold;
-    color: #4CAF50;
+    color: black;
 }
 
 @keyframes floatUp {
