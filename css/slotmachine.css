@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url(https://s.hdnux.com/photos/01/12/17/52/19462789/3/rawImage.jpg);
+    overflow: hidden;
+}
+.slot-machine {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.slots {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.slot {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+.slot.spinning {
+    animation: spin 0.5s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+#result {
+    margin: 10px 0;
+    height: 30px;
+}
+#credits {
+    font-weight: bold;
+}
+
+.flying-image {
+    position: absolute;
+    top: 50%;
+    left: -100px; 
+    transform: translateY(-50%); 
+    animation: fly-and-bounce 10s linear infinite;
+}
+
+@keyframes fly-and-bounce {
+    0% {
+        left: -100px; 
+        transform: translateY(-50%) translateY(0); 
+    }
+    25% {
+        transform: translateY(-50%) translateY(-200px); 
+    }
+    50% {
+        left: 50vw; 
+        transform: translateY(-50%) translateY(0); 
+    }
+    75% {
+        transform: translateY(-50%) translateY(200px); 
+    }
+    100% {
+        left: 100vw; 
+        transform: translateY(-50%) translateY(0); 
+    }
+}
+.flying-image-marlboro {
+    position: absolute;
+    top: 50%;
+    right: -100px; 
+    transform: translateY(-50%); 
+    animation: fly 10s linear infinite;
+}
+@keyframes fly {
+    0% {
+        right: -100px; 
+        transform: translateY(-50%) translateY(0); 
+    }
+    25% {
+        transform: translateY(-50%) translateY(-200px); 
+    }
+    50% {
+        right: 50vw; 
+        transform: translateY(-50%) translateY(0); 
+    }
+    75% {
+        transform: translateY(-50%) translateY(200px); 
+    }
+    100% {
+        left: 100vw; 
+        transform: translateY(-50%) translateY(0); 
+    }
+}
