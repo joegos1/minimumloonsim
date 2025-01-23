@@ -145,3 +145,39 @@ body {
     50% { transform: scale(1.1); }
     100% { transform: scale(1); }
 }
+.return {
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.knop {
+  height: 45px;
+  width: 175px;
+  animation: attention 1.5s infinite;
+  transition: all 0.3s ease;
+}
+@keyframes attention {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255, 20, 147);
+    background-color: rgb(255, 20, 147);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px 10px rgb(204, 255, 0);
+    background-color: rgb(204, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgb(255, 165, 0);
+    background-color: rgb(255, 165, 0);
+  }
+}
+
+.knop:hover {
+  animation: none;
+  transform: scale(1.1);
+}

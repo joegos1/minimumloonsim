@@ -2,11 +2,9 @@ class SlotMachine {
     constructor() {
         this.symbols = ['🍒', '🍋', '🍇', '🍊', '7️⃣'];
         this.credits = 100;
-        this.slots = [
-            document.getElementById('slot1'),
-            document.getElementById('slot2'),
-            document.getElementById('slot3')
-        ];
+        this.slots = Array.from({length: 9}, (_, i) => 
+            document.getElementById(`slot${i + 1}`)
+        );
         this.spinBtn = document.getElementById('spinBtn');
         this.resetBtn = document.getElementById('resetBtn');
         this.resultDisplay = document.getElementById('result');
@@ -18,13 +16,13 @@ class SlotMachine {
 
     spin() {
         // Check if can spin
-        if (this.credits < 10) {
+        if (this.credits < 20) {
             this.resultDisplay.textContent = 'Not enough credits!';
             return;
         }
 
         // Deduct credits
-        this.credits -= 10;
+        this.credits -= 20;
         this.creditsDisplay.textContent = `Credits: ${this.credits}`;
 
         // Add spinning class
@@ -50,16 +48,25 @@ class SlotMachine {
     checkWin() {
         const slotValues = this.slots.map(slot => slot.textContent);
 
-        if (slotValues[0] === slotValues[1] && slotValues[1] === slotValues[2]) {
-            // Jackpot
-            const winnings = 50;
+        // Check for full rows and diagonals
+        const winPatterns = [
+            // Horizontal rows
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            // Vertical columns
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            // Diagonals
+            [0, 4, 8], [2, 4, 6]
+        ];
+
+        const winningRow = winPatterns.find(pattern => 
+            pattern.every(index => slotValues[index] === slotValues[pattern[0]]) &&
+            slotValues[pattern[0]] !== '?'
+        );
+
+        if (winningRow) {
+            const winnings = winningRow.some(index => slotValues[index] === '7️⃣') ? 100 : 50;
             this.credits += winnings;
-            this.resultDisplay.textContent = `Jackpot! You won ${winnings} credits!`;
-        } else if (slotValues[0] === slotValues[1] || slotValues[1] === slotValues[2]) {
-            // Small win
-            const winnings = 20;
-            this.credits += winnings;
-            this.resultDisplay.textContent = `Small win! You won ${winnings} credits!`;
+            this.resultDisplay.textContent = `Winning line! You won ${winnings} credits!`;
         } else {
             this.resultDisplay.textContent = 'No win this time. Try again!';
         }
@@ -68,7 +75,7 @@ class SlotMachine {
         this.creditsDisplay.textContent = `Credits: ${this.credits}`;
 
         // Disable spin if out of credits
-        this.spinBtn.disabled = this.credits < 10;
+        this.spinBtn.disabled = this.credits < 20;
     }
 
     reset() {

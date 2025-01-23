@@ -1,3 +1,4 @@
+
 body {
     font-family: Arial, sans-serif;
     display: flex;
@@ -6,7 +7,6 @@ body {
     height: 100vh;
     margin: 0;
     background-image: url(https://s.hdnux.com/photos/01/12/17/52/19462789/3/rawImage.jpg);
-    overflow: hidden;
 }
 .slot-machine {
     background-color: #fff;
@@ -16,14 +16,14 @@ body {
     text-align: center;
 }
 .slots {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
 }
 .slot {
     width: 100px;
     height: 100px;
-    margin: 0 10px;
     background-color: #e0e0e0;
     display: flex;
     justify-content: center;
@@ -40,10 +40,52 @@ body {
     100% { transform: rotate(360deg); }
 }
 button {
-    margin: 0 10px;
+    margin: 10px;
     padding: 10px 20px;
     font-size: 16px;
 }
+.spinbutton{
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    animation: vibrate 0.1s infinite;
+}
+.button:hover {
+    animation: none; 
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translate(1px, -1px);
+    }
+    25% {
+        transform: translate(-2px, 2px);
+    }
+    50% {
+        transform: translate(2px, -2px);
+    }
+    75% {
+        transform: translate(-1px, 1px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+.bouncing-text {
+    animation: bounce 1s ease-in-out infinite;
+    display: inline-block;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
 #result {
     margin: 10px 0;
     height: 30px;
@@ -107,3 +149,39 @@ button {
         transform: translateY(-50%) translateY(0); 
     }
 }
+.return {
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+.knop {
+    height: 45px;
+    width: 175px;
+    animation: attention 1.5s infinite;
+    transition: all 0.3s ease;
+  }
+  @keyframes attention {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgb(57, 255, 20);
+      background-color: rgb(57, 255, 20);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 10px rgb(77, 77, 255);
+      background-color: rgb(77, 77, 255);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgb(255, 20, 147);
+      background-color: rgb(255, 20, 147);
+    }
+  }
+  
+  .knop:hover {
+    animation: none;
+    transform: scale(1.1);
+  }
