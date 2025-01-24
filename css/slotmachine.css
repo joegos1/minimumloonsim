@@ -6,7 +6,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: url(https://s.hdnux.com/photos/01/12/17/52/19462789/3/rawImage.jpg);
+    background-image:url(https://s.hdnux.com/photos/01/12/17/52/19462789/3/rawImage.jpg) ;
 }
 .slot-machine {
     background-color: #fff;
@@ -94,61 +94,6 @@ button {
     font-weight: bold;
 }
 
-.flying-image {
-    position: absolute;
-    top: 50%;
-    left: -100px; 
-    transform: translateY(-50%); 
-    animation: fly-and-bounce 10s linear infinite;
-}
-
-@keyframes fly-and-bounce {
-    0% {
-        left: -100px; 
-        transform: translateY(-50%) translateY(0); 
-    }
-    25% {
-        transform: translateY(-50%) translateY(-200px); 
-    }
-    50% {
-        left: 50vw; 
-        transform: translateY(-50%) translateY(0); 
-    }
-    75% {
-        transform: translateY(-50%) translateY(200px); 
-    }
-    100% {
-        left: 100vw; 
-        transform: translateY(-50%) translateY(0); 
-    }
-}
-.flying-image-marlboro {
-    position: absolute;
-    top: 50%;
-    right: -100px; 
-    transform: translateY(-50%); 
-    animation: fly 10s linear infinite;
-}
-@keyframes fly {
-    0% {
-        right: -100px; 
-        transform: translateY(-50%) translateY(0); 
-    }
-    25% {
-        transform: translateY(-50%) translateY(-200px); 
-    }
-    50% {
-        right: 50vw; 
-        transform: translateY(-50%) translateY(0); 
-    }
-    75% {
-        transform: translateY(-50%) translateY(200px); 
-    }
-    100% {
-        left: 100vw; 
-        transform: translateY(-50%) translateY(0); 
-    }
-}
 .return {
     height: 200px;
     width: 200px;

@@ -12,6 +12,7 @@ class ClickerGame {
         this.setupEventListeners();
         this.startAutoClicker();
     }
+    
 
     initializeElements() {
         this.scoreDisplay = document.getElementById('score');
@@ -115,7 +116,9 @@ class ClickerGame {
         this.autoClickUpgradeButton.disabled = this.score < this.autoClickerCost;
         this.multiplierUpgradeButton.disabled = this.score < this.multiplierCost;
     }
+    
 }
+
 
 // Start the game
 const game = new ClickerGame();

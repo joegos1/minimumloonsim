@@ -1,0 +1,49 @@
+body {
+    background-image: url(https://media.lasvegasweekly.com/img/photos/2023/08/08/Best-Strip-Casino_Resorts-World-Las-Vegas_Courtesy_t1000.jpg?c76bf34eada957f64a0b14990027a576ff9bf379);
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.menu {
+    background-color: #B11226;
+    width: 500px;
+    height: 400px;
+    border: 2px black solid;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    background-color: #B11226;
+}
+
+li a {
+    display: block;
+    color: #FFD700;
+    padding: 8px 16px;
+    text-decoration: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #7A001A;
+    color: white;
+}

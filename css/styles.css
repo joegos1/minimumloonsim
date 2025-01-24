@@ -5,7 +5,8 @@ body {
     min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url(https://cdn.discordapp.com/attachments/1237828557175132230/1330602172462796901/OIP.png?ex=67933097&is=6791df17&hm=56c3116f438f48b06bb71db6cb26a06c989a75d843e0e2215d680d044a830e55&);
+    background-image: url(https://i.ytimg.com/vi/hFF1z0rlev8/maxresdefault.jpg);
+    background-size: cover;
 }
 
 .game-container {
