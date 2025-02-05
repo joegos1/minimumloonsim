@@ -1,0 +1,119 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c7744;
+    color: white;
+    padding: 20px;
+    perspective: 1000px;
+}
+.hand {
+    margin: 20px 0;
+    min-height: 150px;
+    position: relative;
+}
+.card {
+    display: inline-block;
+    width: 100px;
+    height: 140px;
+    background-color: white;
+    border-radius: 8px;
+    margin: 0 5px;
+    color: black;
+    text-align: center;
+    line-height: 140px;
+    font-size: 24px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    position: absolute;
+    left: 0;
+    top: 50px;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-out;
+    opacity: 0;
+}
+.card.dealt {
+    opacity: 1;
+    transform: translateX(var(--dealt-position)) rotateY(0deg);
+}
+.card.red {
+    color: red;
+}
+.card.hidden {
+    background-image: linear-gradient(45deg, #b00 25%, #d00 25%, #d00 50%, #b00 50%, #b00 75%, #d00 75%, #d00);
+    background-size: 20px 20px;
+    color: transparent;
+    transform: rotateY(180deg);
+}
+button {
+    font-size: 18px;
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    transition: all 0.2s ease;
+    position: relative;
+    top: 0;
+}
+button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: none;
+}
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+#message {
+    font-size: 24px;
+    margin: 20px;
+    font-weight: bold;
+    min-height: 36px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+#message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes win-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.win-animation {
+    animation: win-pulse 0.5s ease-in-out;
+}
+.score {
+    transition: all 0.3s ease;
+}
+.score.update {
+    color: #ffd700;
+    transform: scale(1.2);
+}
+h2 {
+    position: relative;
+    z-index: 1;
+}
+.return {
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  .knop {
+    height: 45px;
+    width: 175px;
+    animation: attention 1.5s infinite;
+    transition: all 0.3s ease;
+  }
