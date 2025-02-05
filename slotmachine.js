@@ -68,7 +68,7 @@ class SlotMachine {
             this.credits += winnings;
             this.resultDisplay.textContent = `Winning line! You won ${winnings} credits!`;
         } else {
-            this.resultDisplay.textContent = 'No win this time. Try again!';
+            this.resultDisplay.textContent = 'No win this time. Try again!'; 
         }
 
         // Update credits display
